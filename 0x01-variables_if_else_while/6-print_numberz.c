@@ -5,6 +5,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+
 /**
  * main - Entry point
  *
@@ -15,7 +16,11 @@ int main(void)
 
 	int i = '0';
 
-	for(; i<='9'; i++) putchar(i);
+	for(; i<='9'; i++)
+	{
+		putchar(i);
+	}
+	
 	putchar('\n');
 
 	return (0);
