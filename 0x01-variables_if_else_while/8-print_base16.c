@@ -5,7 +5,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int main(void){
+int main(void)
+{
 
 	int n = '0';
 	char l = 'a';
