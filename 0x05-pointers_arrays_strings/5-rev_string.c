@@ -19,11 +19,14 @@ void rev_string(char *s)
 		length++;
 		s++;
 	}
-	while (count <= length)
+	while (count < length/2)
 	{
-		_putchar(*(s - count));
+		char temp = *(s - length + count);
+		*(s - length + count) = *(s - count - 1);
+		*(s - count - 1) = temp;
+		
 		count++;
 	}
-	_putchar('\n');
+
 }
 
