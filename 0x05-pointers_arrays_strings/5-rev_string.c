@@ -19,7 +19,7 @@ void rev_string(char *s)
 		length++;
 		s++;
 	}
-	while (count < length/2)
+	while (count < length / 2)
 	{
 		char temp = *(s - length + count);
 		*(s - length + count) = *(s - count - 1);
