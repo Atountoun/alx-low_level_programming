@@ -13,7 +13,6 @@ void rev_string(char *s)
 {
 	int length = 0;
 	int count = 0;
-	
 	while (*s != '\0')
 	{
 		length++;
@@ -21,7 +20,7 @@ void rev_string(char *s)
 	}
 	while (count < length)
 	{
-		_putchar(*(s-count));
+		_putchar(*(s - count));
 		count++;
 	}
 	_putchar('\n');
