@@ -13,12 +13,13 @@ void rev_string(char *s)
 {
 	int length = 0;
 	int count = 0;
+
 	while (*s != '\0')
 	{
 		length++;
 		s++;
 	}
-	while (count < length)
+	while (count <= length)
 	{
 		_putchar(*(s - count));
 		count++;
