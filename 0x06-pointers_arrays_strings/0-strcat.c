@@ -3,25 +3,6 @@
 #include "main.h"
 
 /**
- * len - calculates the length of a string
- *
- * @s : the string 
- *
- * Return : the length of the string
- */
-int len(char *s)
-{
-	int length = 0;
-
-	while (*s != '\0')
-	{
-		length++;
-		s++;
-	}
-	return (length);
-}
-
-/**
  * _strcat - concatenates two strings
  *
  * @dest : string to which @src will be added
@@ -34,8 +15,17 @@ char *_strcat(char *dest, char *src)
 	int src_length = 0;
 	int dest_length = 0;
 	int i = 0;
-	src_length = len(src);
-	dest_length = len(dest);
+	
+	while (*src != '\0')
+        {
+                src_length++;
+                src++;
+        }
+	while (*dest != '\0')
+	{
+		dest_length++;
+		dest++;
+	}
 	src -= src_length;
 	dest -= dest_length;
 	
