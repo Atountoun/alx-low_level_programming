@@ -27,6 +27,7 @@ int _strcmp(char *s1, char *s2)
 		second_length++;
 		s2++;
 	}
+
 	if (first_length < second_length)
 	{
 		length = first_length;
@@ -35,6 +36,7 @@ int _strcmp(char *s1, char *s2)
 	{
 		length = second_length;
 	}
+
 	while (count < length)
 	{
 		if (*s1 < *s2)
@@ -49,6 +51,7 @@ int _strcmp(char *s1, char *s2)
 		s1++;
 		s2++;
 	}
+
 	if (first_length < second_length)
 	{
 		return (-15);
@@ -57,5 +60,6 @@ int _strcmp(char *s1, char *s2)
 	{
 		return (15);
 	}
+
 	return (0);
 }
