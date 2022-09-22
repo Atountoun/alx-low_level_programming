@@ -5,10 +5,10 @@
 /**
  * _strcmp - compares two strings
  *
- * @s1 : first string
- * @s2 : second string
+ * @s1: first string
+ * @s2: second string
  *
- * Return 0, -15 or 15
+ * Return: 0, -15 or 15
  */
 int _strcmp(char *s1, char *s2)
 {
@@ -28,23 +28,34 @@ int _strcmp(char *s1, char *s2)
 		s2++;
 	}
 	if (first_length < second_length)
+	{
 		length = first_length;
+	}
 	else
+	{
 		length = second_length;
+	}
 	while (count < length)
 	{
 		if (*s1 < *s2)
+		{
 			return (-15);
+		}
 		else if (*s1 > *s2)
+		{
 			return (15);
+		}
 		count++;
 		s1++;
 		s2++;
 	}
 	if (first_length < second_length)
+	{
 		return (-15);
+	}
 	else if (first_length > second_length)
+	{
 		return (15);
+	}
 	return (0);
-
 }
