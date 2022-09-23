@@ -12,9 +12,12 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int length, count = 0, first_length = 0, second_length = 0;
+	int length;
+       	int count = 0;
+       	int first_length = 0;
+	int second_length = 0;
 
-	while (s1[first_length} != '\0')
+	while (s1[first_length] != '\0')
 		first_length++;
 
 	while (s2[second_length] != '\0')
