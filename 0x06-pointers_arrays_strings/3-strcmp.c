@@ -12,17 +12,15 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int length, int count = 0, int first_length = 0, int second_length = 0;
+	int length, count = 0, first_length = 0, second_length = 0;
 
-	while (*s1 != '\0')
+	while (s1[first_length} != '\0')
 	{
 		first_length++;
-		s1++;
 	}
-	while (*s2 != '\0')
+	while (s2[second_length] != '\0')
 	{
 		second_length++;
-		s2++;
 	}
 	if (first_length < second_length)
 	{
@@ -34,7 +32,7 @@ int _strcmp(char *s1, char *s2)
 	}
 	while (count < length)
 	{
-		if (*s1 < *s2)
+		if (s1[count] < s2[count])
 		{
 			return (-15);
 		}
@@ -43,8 +41,6 @@ int _strcmp(char *s1, char *s2)
 			return (15);
 		}
 		count++;
-		s1++;
-		s2++;
 	}
 	if (first_length < second_length)
 	{
@@ -54,6 +50,5 @@ int _strcmp(char *s1, char *s2)
 	{
 		return (15);
 	}
-
 	return (0);
 }
