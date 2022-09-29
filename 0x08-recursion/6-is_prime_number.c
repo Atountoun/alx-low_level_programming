@@ -24,13 +24,13 @@ int is_divisible(int num, int div)
 }
 
 /**
- * _is_prime_number - checks if a number is prime
+ * is_prime_number - checks if a number is prime
  * @n: the number to be checked
  *
  * Return: 0 - if the number is not prime
  *	   1 - if it is
  */
-int _is_prime_number(int n)
+int is_prime_number(int n)
 {
 	int div = 2;
 
