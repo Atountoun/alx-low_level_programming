@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	print_result(atoi(argv[1][0]) * atoi(argv[2][0]));
+	print_result(atoi(argv[1]) * atoi(argv[2]));
 	_putchar('\n');
 
 	return (0);
