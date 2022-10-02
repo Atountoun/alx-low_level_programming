@@ -3,8 +3,8 @@
 
 /**
  * main - prints numbers from 1 to 100, followed by a new line. But for multiples
- * 	of three prints Fizz and for those multiples of five Buzz. For numbers
- * 	multiples of both threee and five prints FizzBuzz
+ *	of three prints Fizz and for those multiples of five Buzz. For numbers
+ *	multiples of both threee and five, FizzBuzz
  *
  * Return: always 0
  */
@@ -15,14 +15,15 @@ int main(void)
 	while (i <= 100)
 	{
 		if (i % 15 == 0)
-			printf("FizzBuzz ");
+			printf("FizzBuzz");
 		else if (i % 5 == 0)
-			printf("Buzz ");
+			printf("Buzz");
 		else if (i % 3 == 0)
-			printf("Fizz ");
+			printf("Fizz");
 		else
-			printf("%d ", i);
+			printf("%d", i);
 		i++;
+		putchar(' ');
 	}
 	putchar('\n');
 
