@@ -24,8 +24,8 @@ int main(void)
 		}
 		i += 2;
 	}
-	if (n > 2)
-		printf("%ld", n);
+
+	printf("%ld\n", n);
 
 	return (0);
 }
