@@ -10,21 +10,19 @@
 int main(void)
 {
 	long n = 612852475143;
-	int i = 3;
+	long i = 3;
 
 	while (n % 2 == 0)
 	{
-		printf("%ld ", 2);
 		n /= 2;
 	}
 	while (i < n / 2)
 	{
 		while (n % i == 0)
 		{
-			printf("%ld ", i);
 			n /= i;
 		}
-		i++;
+		i += 2;
 	}
 	if (n > 2)
 		printf("%ld", n);
