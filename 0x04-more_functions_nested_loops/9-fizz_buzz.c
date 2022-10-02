@@ -2,9 +2,7 @@
 #include <stdlib.h>
 
 /**
- * main - prints numbers from 1 to 100, followed by a new line. But for multiples
- *	of three prints Fizz and for those multiples of five Buzz. For numbers
- *	multiples of both threee and five, FizzBuzz
+ * main - prints numbers from 1 to 100, followed by a new line. FizzBuzz
  *
  * Return: always 0
  */
@@ -23,7 +21,8 @@ int main(void)
 		else
 			printf("%d", i);
 		i++;
-		putchar(' ');
+		if (i != 100)
+			putchar(' ');
 	}
 	putchar('\n');
 
