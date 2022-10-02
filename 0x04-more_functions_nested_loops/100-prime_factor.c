@@ -9,25 +9,25 @@
  */
 int main(void)
 {
-	int n = 1231952;
+	long n = 612852475143;
 	int i = 3;
 
 	while (n % 2 == 0)
 	{
-		printf("%d ", 2);
+		printf("%ld ", 2);
 		n /= 2;
 	}
 	while (i < n / 2)
 	{
 		while (n % i == 0)
 		{
-			printf("%d ", i);
+			printf("%ld ", i);
 			n /= i;
 		}
 		i++;
 	}
 	if (n > 2)
-		printf("%d", n);
+		printf("%ld", n);
 
 	return (0);
 }
