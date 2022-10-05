@@ -27,7 +27,7 @@ int len(char *str)
  *
  * Return: NULL on failure, a pointer to the newly allocated space in memory
  */
-char *str_concat(char *s1; char *s2)
+char *str_concat(char *s1, char *s2)
 {
 	char *concat;
 	int i = 0, first_len = 0;
@@ -54,5 +54,3 @@ char *str_concat(char *s1; char *s2)
 	}
 	return (concat);
 }
-
-

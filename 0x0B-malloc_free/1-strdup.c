@@ -23,8 +23,10 @@ int len(char *str)
 }
 
 /**
- * _strdup - returns a pointer to a newly allocated space in memory with a copy of str
- * @str: a pointer to the string to be copied in the newly allocaed space in memory
+ * _strdup - returns a pointer to a newly allocated
+ *	space in memory with a copy of str
+ * @str: a pointer to the string to be copied in 
+ *	the newly allocaed space in memory
  *
  * Return: NULL if str = NULL, pointer to the duplicated string
  */
@@ -45,7 +47,7 @@ char *_strdup(char *str)
 				i++;
 			}
 		}
+		return (dup);
 	}
-	return (dup);
+	return (NULL);
 }
-
