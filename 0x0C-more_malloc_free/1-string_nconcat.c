@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "main.h"
 
-int len(char *s);
+unsigned int len(char *s);
 char *string_nconcat(char *s1, char *s2, unsigned int n);
 
 /***
@@ -11,9 +11,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n);
  *
  * Return: the number of characters of s
  */
-int len(char *s)
+unsigned int len(char *s)
 {
-	int length = 0;
+	unsigned int length = 0;
 
 	while (s[length] != '\0')
 		length++;
@@ -32,12 +32,12 @@ int len(char *s)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ptr;
-	int f_len = 0, i = 0, j = 0;
+	unsigned int f_len = 0, i = 0, j = 0;
 
 	if (s1 == NULL)
-		*s1 = "";
+		s1 = "";
 	if (s2 == NULL)
-		*s2 = "";
+		s2 = "";
 
 	f_len = len(s1);
 	if (n >= 0)
