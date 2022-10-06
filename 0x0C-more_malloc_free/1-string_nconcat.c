@@ -30,32 +30,30 @@ int len(char *s)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ptr;
-	int f_len, i;
+	int f_len, i = 0, j = 0;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 	f_len = len(s1);
-	i = 0;
 	ptr = malloc(f_len + n + 1);
 
 	if (ptr == NULL)
 		return (NULL);
 
-	while (*s1 != '\0')
+	while (i < f_len)
 	{
-		*ptr = *s1;
-		ptr++;
+		*(ptr + i) = *s1;
+		i++;
 		s1++;
 	}
-	while (i < n)
+	while (j < n)
 	{
-		*ptr = s2[i];
-		ptr++;
-		i++;
+		*(ptr + f_len + j) = s2[j];
+		j++;
 	}
-	*ptr = '\0';
+	*(ptr + f_len +j) = '\0';
 
 	return (ptr);
 }
