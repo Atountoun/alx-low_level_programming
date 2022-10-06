@@ -3,7 +3,7 @@
 #include "main.h"
 
 int len(char *s);
-char *string_nconcat(char *s1, char *s2, unsigned int b);
+char *string_nconcat(char *s1, char *s2, unsigned int n);
 
 /***
  * len - the length of  a string
@@ -35,9 +35,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	int f_len = 0, i = 0, j = 0;
 
 	if (s1 == NULL)
-		s1 = "";
+		*s1 = "";
 	if (s2 == NULL)
-		s2 = "";
+		*s2 = "";
 
 	f_len = len(s1);
 	if (n >= 0)
