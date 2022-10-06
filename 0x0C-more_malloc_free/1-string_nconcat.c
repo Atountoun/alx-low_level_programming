@@ -40,25 +40,30 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 
 	f_len = len(s1);
-	ptr = malloc((f_len + n + 1) * sizeof(char));
-
-	if (ptr == NULL)
-		return (NULL);
-
-	while (i < f_len)
+	if (n >= 0)
 	{
-		ptr[i] = *s1;
-		i++;
-		s1++;
-	}
-	while (j < n)
-	{
-		ptr[f_len + j] = s2[j];
-		j++;
-	}
-	ptr[f_len +j] = '\0';
+		ptr = malloc((f_len + n + 1) * sizeof(char));
 
-	return (ptr);
+		if (ptr == NULL)
+			return (NULL);
+
+
+		while (i < f_len)
+		{
+			ptr[i] = *s1;
+			i++;
+			s1++;
+		}
+		while (j < n)
+		{
+			ptr[f_len + j] = s2[j];
+			j++;
+		}
+		ptr[f_len +j] = '\0';
+
+		return (ptr);
+	}
+	return (NULL);
 }
 
 
