@@ -2,25 +2,6 @@
 #include <stdlib.h>
 #include "main.h"
 
-unsigned int len(char *s);
-char *string_nconcat(char *s1, char *s2, unsigned int n);
-
-/**
- * len - the length of  a string
- * @s: a pointer to the string
- *
- * Return: the number of characters of s
- */
-unsigned int len(char *s)
-{
-	unsigned int length = 0;
-
-	while (s[length] != '\0')
-		length++;
-
-	return (length);
-}
-
 /**
  * string_nconcat - concatenates two strings
  * @s1: a pointer to the first string
@@ -31,38 +12,30 @@ unsigned int len(char *s)
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *ptr;
-	unsigned int f_len = 0;
-	unsigned int i = 0, j = 0;
+	char *concat;
+	unsigned int len = n, i = 0;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
-	f_len = len(s1);
-	if (n >= 0)
-	{
-		ptr = malloc((f_len + n + 1) * sizeof(char));
+	while (s1[i])
+		len++;
+	concat = malloc((len + 1) * sizeof(char));
 
-		if (ptr == NULL)
-			return (NULL);
+	if (concat == NULL)
+		return (NULL);
+	len = 0;
+	i = 0;
 
-		while (i < f_len)
-		{
-			ptr[i++] = *s1;
-			s1++;
-		}
-		while (j < n)
-		{
-			ptr[f_len + j] = s2[j];
-			j++;
-		}
-		ptr[f_len + j] = '\0';
+	while (s1[i])
+		concat[len++] = s1[i++];
+	i = 0;
 
-		return (ptr);
-	}
-	return (NULL);
+	while (s2[i] && i < n)
+		concat[len++] = s2[i++];
+	concat[len] = '\0';
+
+	return (concat);
 }
-
-
