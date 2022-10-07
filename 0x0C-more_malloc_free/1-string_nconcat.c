@@ -5,7 +5,7 @@
 unsigned int len(char *s);
 char *string_nconcat(char *s1, char *s2, unsigned int n);
 
-/***
+/**
  * len - the length of  a string
  * @s: a pointer to the string
  *
@@ -32,7 +32,8 @@ unsigned int len(char *s)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ptr;
-	unsigned int f_len = 0, i = 0, j = 0;
+	unsigned int f_len = 0;
+	unsigned int i = 0, j = 0;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -47,11 +48,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		if (ptr == NULL)
 			return (NULL);
 
-
 		while (i < f_len)
 		{
-			ptr[i] = *s1;
-			i++;
+			ptr[i++] = *s1;
 			s1++;
 		}
 		while (j < n)
@@ -59,7 +58,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			ptr[f_len + j] = s2[j];
 			j++;
 		}
-		ptr[f_len +j] = '\0';
+		ptr[f_len + j] = '\0';
 
 		return (ptr);
 	}
