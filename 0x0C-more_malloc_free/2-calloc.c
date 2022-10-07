@@ -16,7 +16,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	array_ptr = alloc(nmemb * size);
+	array_ptr = malloc(nmemb * size);
+	if (arra_ptr != NULL)
+		return (array_ptr);
 
-	return (array_ptr);
+	return (NULL);
 }	
