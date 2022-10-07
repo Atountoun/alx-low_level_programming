@@ -20,7 +20,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	array_ptr = malloc(nmemb * size);
 
-	if (arra_ptr != NULL)
+	if (array_ptr != NULL)
 	{
 		filler = array_ptr;
 
