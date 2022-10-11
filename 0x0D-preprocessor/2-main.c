@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-	char[] s = __FILE__;
+	char s[] = __FILE__;
 	int i = 0;
 
 	while(s[i] != '\0')
