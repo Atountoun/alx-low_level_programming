@@ -64,9 +64,11 @@ void print_string(va_list arg)
 	str = va_arg(arg, char *);
 
 	if (str == NULL)
+	{
 		printf("(nil)");
-	else
-		printf("%s", str);
+		return;
+	}
+	printf("%s", str);
 }
 
 /**
@@ -79,7 +81,8 @@ void print_string(va_list arg)
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i = 0, j = 0;
+	int i = 0;
+	int j;
 	char *separator = "";
 	printer_t funcs[] = {
 		{"c", print_char},
@@ -87,14 +90,11 @@ void print_all(const char * const format, ...)
 		{"f", print_float},
 		{"s", print_string}
 	};
-
 	va_start(args, format);
-
-	while (format && (*(format + i)))
+	while (format && format[i])
 	{
 		j = 0;
-
-		while (format && (*(format + i) != *(funcs[j].symbol)))
+		while (j < 4 && (format[i] != *(funcs[j].symbol)))
 			j++;
 		if (j < 4)
 		{
@@ -102,11 +102,8 @@ void print_all(const char * const format, ...)
 			funcs[j].print(args);
 			separator = ", ";
 		}
-
 		i++;
 	}
 	printf("\n");
-
 	va_end(args);
 }
-
