@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "variadic_functions.h"
 #include <stdarg.h>
 
@@ -47,7 +46,7 @@ void print_float(va_list arg)
 {
 	float num;
 
-	num = va_arg(arg, float);
+	num = va_arg(arg, double);
 	printf("%f", num);
 }
 
