@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
 			continue;
 		printf(" ");
 		address++;
+		i++;
 	}
 	printf("\n");
 
