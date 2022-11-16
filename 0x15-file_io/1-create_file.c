@@ -1,6 +1,13 @@
 #include <stdlib.h>
 #include "main.h"
 
+/**
+ * create_file - creates a file
+ * @filename: a pointer to the name of the file
+ * @text_content: the content of the file
+ *
+ * Return: 1 if success, -1 if else
+ */
 int create_file(const char *filename, char *text_content)
 {
 	int op, wr, len = 0;

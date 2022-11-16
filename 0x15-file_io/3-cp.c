@@ -5,6 +5,12 @@
 char *create_buffer(char *file);
 void close_file(int fd);
 
+/**
+ * create_buffer - create a buffer to use for the reading
+ * @file: a pointer to the file
+ *
+ * Return: the created buffer
+ */
 char *create_buffer(char *file)
 {
 	char *buffer;
@@ -20,6 +26,12 @@ char *create_buffer(char *file)
 	return (buffer);
 }
 
+/**
+ * close_file - closes a file
+ * @fd:  the file descriptor number
+ *
+ * Return: nothing
+ */
 void close_file(int fd)
 {
 	int c;
@@ -32,6 +44,13 @@ void close_file(int fd)
 	}
 }
 
+/**
+ * main - copies one file's content to another one
+ * @argc: the number of arguments passed by cmd line
+ * @argv: a pointer to an aray of elements passed by cmd line
+ *
+ * Return: 1 if success, error on failure
+ */
 int main(int argc, char *argv[])
 {
 	int source, target, rd, wr;
