@@ -63,9 +63,9 @@ int main(int argc, char *argv[])
 	}
 
 	buffer = create_buffer(argv[2]);
-	source = op(argv[1], O_RDONLY);
+	source = open(argv[1], O_RDONLY);
 	rd = read(source, buffer, 1024);
-	target = op(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	target = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
 		if (source == -1 || rd == -1)
