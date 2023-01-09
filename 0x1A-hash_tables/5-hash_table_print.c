@@ -12,16 +12,15 @@
 void print_chain(hash_node_t *head)
 {
 	hash_node_t *current;
+
 	if (head == NULL)
 		return;
-
 	current = head;
 	while (current)
 	{
 		printf(", '%s': '%s'", current->key, current->value);
 		current = current->next;
 	}
-
 }
 
 /**
@@ -43,13 +42,11 @@ void hash_table_print(const hash_table_t *ht)
 		putchar('}');
 		return;
 	}
-
 	i = 0;
 	counter = 0;
 	while (i++ < ht->size)
 	{
 		node = ht->array[i];
-		
 		if (node && counter == 0)
 		{
 			printf("'%s': '%s'", node->key, node->value);
@@ -62,7 +59,6 @@ void hash_table_print(const hash_table_t *ht)
 			print_chain(node->next);
 		}
 	}
-
 	putchar('}');
 	printf("\n");
 }

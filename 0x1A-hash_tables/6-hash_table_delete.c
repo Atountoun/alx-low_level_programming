@@ -7,8 +7,6 @@ void free_chain(hash_node_t *head)
 {
 	hash_node_t *current;
 
-	if (head == NULL)
-		return;
 	while (head)
 	{
 		current = head;
@@ -29,13 +27,12 @@ void free_chain(hash_node_t *head)
 void hash_table_delete(hash_table_t *ht)
 {
 	unsigned long int i;
-	hash_node_t *node;
 
 	i = 0;
 	while (i++ < ht->size)
 	{
-		node = ht->array[i];
-		if (node)
+		hash_node_t *node = ht->array[i];
+		if (node != NULL)
 			free_chain(node);
 	}
 	free(ht->array);

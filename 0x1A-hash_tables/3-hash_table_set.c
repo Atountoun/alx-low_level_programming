@@ -19,21 +19,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (ht == NULL)
 		return (0);
-
 	if (key == NULL ||  !(*key))
 		return (0);
- 
 	node = (hash_node_t *)malloc(sizeof(hash_node_t));
 	if (node == NULL)
 		return (0);
-
-	node->key = (char*)malloc(strlen(key) + 1);
-	node->value = (char*)malloc(strlen(value) + 1);
-
+	node->key = (char *)malloc(strlen(key) + 1);
+	node->value = (char *)malloc(strlen(value) + 1);
 	strcpy(node->key, key);
 	node->value = strdup(value);
 	node->next = NULL;
-
 	if (node->value == NULL)
 	{
 		free(node->key);
@@ -41,28 +36,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(node);
 		return (0);
 	}
-
-	hash = key_index((unsigned char*)key, ht->size);
+	hash = key_index((unsigned char *)key, ht->size);
 	current = (ht->array)[hash];
 	if (current == NULL)
-	{
-		/* No collision */
 		ht->array[hash] = node;
-	}
 	else
 	{
 		if (strcmp(current->key, key) == 0)
-		{
 			strcpy(ht->array[hash]->value, value);
-		}
 		else
 		{
-			/* There is collision */
 			while (current->next != NULL)
 				current = current->next;
 			current->next = node;
 		}
 	}
-
 	return (1);
 }
