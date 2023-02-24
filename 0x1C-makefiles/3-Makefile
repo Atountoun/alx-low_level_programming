@@ -1,0 +1,30 @@
+CC = gcc
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
+
+all: $(NAME)
+
+# Linking
+$(NAME): $(OBJ)
+	$(CC) $^ -o $@
+
+%.o: %.c
+	$(CC) -c $< -o $@
+
+# Clean Emacs and Vim temporary files, objects files, and the executable
+clean:
+	$(RM) *~ $(NAME)
+
+# Clean objects files
+oclean:
+	$(RM) $(wildcard *.o)
+
+# Clean Emacs and Vim temporary files, object files, and the executable
+fclean: clean oclean
+
+# Recompile all source files
+re: oclean all
+
+.PHONY: all clean oclean fclean re

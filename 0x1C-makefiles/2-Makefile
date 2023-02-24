@@ -1,0 +1,15 @@
+CC = gcc # compiler
+SRC = $(wildcard *.c) # search for source files
+OBJ = $(SRC:.c=.o) # convert all c sources files to object files
+NAME = school
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) -o $@ $^
+
+%.o: %.c
+	$(CC) -c $< -o $@
+clean:
+	rm -f *.o $(NAME)
+.PHONY: all clean
